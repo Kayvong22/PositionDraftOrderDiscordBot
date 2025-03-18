@@ -22,14 +22,14 @@ async def on_ready():
 async def shuffle(ctx, *, names: str):
     """Shuffles a list of names given as input"""
 
-    print(f"Raw input:\n{names}")  # Print input to console (for debugging)
+    # print(f"Raw input:\n{names}")  # Print input to console (for debugging)
     
     name_list = [name.strip() for name in names.split("\n") if name.strip()]  # Ensure correct splitting
-    print(f"Parsed list: {name_list}")  # Print parsed list to console
+    # print(f"Parsed list: {name_list}")  # Print parsed list to console
 
     random.shuffle(name_list)  # Shuffle names
     shuffled_names = "\n".join(name_list)
-    print(f"Shuffled list: {shuffled_names}")  # Rejoin as a string
+    # print(f"Shuffled list: {shuffled_names}")  # Rejoin as a string
     await ctx.send(f"Here is the position draft order:\n```\n{shuffled_names}\n```")
 
 bot.run(TOKEN)
